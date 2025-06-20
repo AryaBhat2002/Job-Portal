@@ -4,25 +4,17 @@ const jobSlice = createSlice({
     name: "job",
     initialState: {
         allJobs: [],
+        singleJob: null,
     },
     reducers: {
         setAllJobs: (state, action) => {
             state.allJobs = action.payload;
         },
-        // addJob: (state, action) => {
-        //     state.allJobs.push(action.payload);
-        // },
-        // updateJob: (state, action) => {
-        //     const index = state.allJobs.findIndex(job => job.id === action.payload.id);
-        //     if (index !== -1) {
-        //         state.allJobs[index] = action.payload;
-        //     }
-        // },
-        // deleteJob: (state, action) => {
-        //     state.allJobs = state.allJobs.filter(job => job.id !== action.payload);
-        // }
+        setSingleJob: (state, action) => {
+            state.singleJob = action.payload;
+        },
     }
 });
 
-export const { setAllJobs } = jobSlice.actions;
+export const { setAllJobs , setSingleJob} = jobSlice.actions;
 export default jobSlice.reducer;
